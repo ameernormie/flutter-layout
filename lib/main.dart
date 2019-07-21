@@ -4,10 +4,11 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Layout Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -57,6 +58,34 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Widget titleSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Row(
+      children: <Widget>[
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  'Banjusa Lake Rawalakot',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Text('Rawalakot, Kashmir',
+                  style: TextStyle(color: Colors.grey[500]))
+            ],
+          ),
+        ),
+        Icon(Icons.star, color: Colors.red[500]),
+        Text('41'),
+      ],
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -89,16 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+          children: <Widget>[titleSection],
         ),
       ),
       floatingActionButton: FloatingActionButton(

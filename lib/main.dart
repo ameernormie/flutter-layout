@@ -80,7 +80,17 @@ class MyApp extends StatelessWidget {
             title: Text('Flutter Layout Demo'),
           ),
           body: ListView(
-            children: <Widget>[titleSection, buttonSection, textSection],
+            children: <Widget>[
+              Image.asset(
+                'images/lake.jpg',
+                width: 600,
+                height: 240,
+                fit: BoxFit.cover,
+              ),
+              titleSection,
+              buttonSection,
+              textSection
+            ],
           ),
         ));
   }
